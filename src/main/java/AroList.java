@@ -24,21 +24,6 @@ public class AroList<T> implements MyArrayList
         }
     }
 
-    // Увеличивает размер массива до величины index (В случае успешного добавления выводит true иначе false)
-    @Override
-    public boolean add(int index) {
-        try {
-            // если размер больше index то не увеличиваем
-            if (size > index) return false;
-            else
-                this.size = index;
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
-
     // Метод меняет размер массива
 
     private void resize() {
@@ -59,18 +44,14 @@ public class AroList<T> implements MyArrayList
 
 
     @Override
-    public T get(int index) {
+    public Object get(int index) {
         if (index >= 0 && index < size) {
             return student[index];
         }
         return null;
     }
 
-    /**
-     * Метод получает обьект из массива
-     *
-     * @Return
-     */
+
     @Override
     public T get(Object o)
     {
@@ -84,7 +65,6 @@ public class AroList<T> implements MyArrayList
 
 
     // Метод заменяет обьект в массиве по индексу
-
     @Override
     public void set(int index, Object o) {
         if (index >= 0 && index < size) {
